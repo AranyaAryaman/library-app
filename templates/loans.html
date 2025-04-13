@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan History</title>
+</head>
+<body>
+    <h1>Loan History for Member ID: {{ mid }}</h1>
+    <table border="1">
+        <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Branch ID</th>
+            <th>Branch Name</th>
+            <th>Branch Address</th>
+            <th>Copy ID</th>
+            <th>Loan Date</th>
+            <th>Return Date</th>
+        </tr>
+        {% for loan in loans %}
+        <tr>
+            <td><a href="{{ url_for('available', bid=loan[0]) }}">{{ loan[0] }}</a></td>
+            <td>{{ loan[1] }}</td>
+            <td>{{ loan[2] }}</td>
+            <td>{{ loan[3] }}</td>
+            <td>{{ loan[4] }}</td>
+            <td>{{ loan[5] }}</td>
+            <td>{{ loan[6] }}</td>
+            <td>{{ loan[7] }}</td>
+            <td>{{ loan[8] }}</td>
+            <td>{{ loan[9] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('home') }}">Back</a>
+</body>
+</html>

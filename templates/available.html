@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Copies</title>
+</head>
+<body>
+    <h1>Available Copies for Book ID: {{ bid }}</h1>
+    <table border="1">
+        <tr>
+            <th>Copy ID</th>
+            <th>Branch ID</th>
+            <th>Branch Name</th>
+            <th>Branch Address</th>
+        </tr>
+        {% for copy in copies %}
+        <tr>
+            <td>{{ copy[0] }}</td>
+            <td>{{ copy[1] }}</td>
+            <td>{{ copy[2] }}</td>
+            <td>{{ copy[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('home') }}">Back</a>
+</body>
+</html>
